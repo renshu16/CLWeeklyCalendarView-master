@@ -9,24 +9,27 @@
 #import "ViewController.h"
 #import "CLWeeklyCalendarView.h"
 #import "MAGridView.h"
+#import "MAGridView+ScheduleView.h"
 #import "CommonUI.h"
 
 static const unsigned int HOURS_IN_DAY                        = 24;
 static const unsigned int DAYS_IN_WEEK                        = 7;
 
-static const CGFloat LEFT_TIME_WIDTH                          = 30.0;
-
-
+static const CGFloat LEFT_TIME_WIDTH                          = 38.0;
+static const CGFloat STATUS_BAR_HEIGHT                        = 20.0;
 
 
 @interface ViewController ()<CLWeeklyCalendarViewDelegate>
+{
+    CGFloat gridCellWidth;
+}
 
 @property (nonatomic, strong) CLWeeklyCalendarView* calendarView;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) MAGridView *gridView;
 @end
 
-static CGFloat CALENDER_VIEW_HEIGHT = 120.f;
+static CGFloat CALENDER_VIEW_HEIGHT = 98.f;
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -38,6 +41,31 @@ static CGFloat CALENDER_VIEW_HEIGHT = 120.f;
     [self.view addSubview:self.scrollView];
     CGSize contentSize = CGSizeMake(self.gridView.bounds.size.width, self.gridView.bounds.size.height);
     [self.scrollView setContentSize:contentSize];
+    
+    
+    CGFloat labelWidth = LEFT_TIME_WIDTH;
+    CGFloat labelHeight = 18;
+    CGFloat labelStartCenterX = LEFT_TIME_WIDTH/2;
+    CGFloat labelStartCenterY = CGRectGetMinY(self.gridView.frame);
+    for (int i=0; i<HOURS_IN_DAY; i++) {
+        NSString *timeStr  =[NSString stringWithFormat:@"%d:00",i];
+        
+        UILabel * timeIntervalLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, labelWidth, labelHeight)];
+        CGPoint centerP = CGPointMake(labelStartCenterX, labelStartCenterY);
+        timeIntervalLabel.center = centerP;
+        timeIntervalLabel.font = font_sub_content;
+        timeIntervalLabel.textColor = color_font_subtext_black;
+        timeIntervalLabel.textAlignment = NSTextAlignmentCenter;
+        timeIntervalLabel.text = timeStr;
+        labelStartCenterY += gridCellWidth;
+        [self.scrollView addSubview:timeIntervalLabel];
+    }
+    
+    for (int i = 0; i< 6; i++) {
+        TBScheduleView * scheduleView = [[TBScheduleView alloc] initWithFrame:CGRectZero];
+        [self.gridView addScheduleView:scheduleView withOffset:i];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,7 +77,7 @@ static CGFloat CALENDER_VIEW_HEIGHT = 120.f;
 -(CLWeeklyCalendarView *)calendarView
 {
     if(!_calendarView){
-        _calendarView = [[CLWeeklyCalendarView alloc] initWithFrame:CGRectMake(LEFT_TIME_WIDTH, 0, self.view.bounds.size.width - LEFT_TIME_WIDTH, CALENDER_VIEW_HEIGHT)];
+        _calendarView = [[CLWeeklyCalendarView alloc] initWithFrame:CGRectMake(0, STATUS_BAR_HEIGHT, self.view.bounds.size.width, CALENDER_VIEW_HEIGHT)];
         _calendarView.delegate = self;
     }
     return _calendarView;
@@ -68,8 +96,8 @@ static CGFloat CALENDER_VIEW_HEIGHT = 120.f;
 {
     if (!_gridView){
         CGRect rect = CGRectMake(LEFT_TIME_WIDTH, 0, self.view.bounds.size.width-LEFT_TIME_WIDTH, 0);
-        CGFloat cellWidth = rect.size.width/DAYS_IN_WEEK;
-        CGFloat gridHeight = HOURS_IN_DAY * cellWidth;
+        gridCellWidth = rect.size.width/DAYS_IN_WEEK;
+        CGFloat gridHeight = HOURS_IN_DAY * gridCellWidth;
         rect = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, gridHeight);
         _gridView = [[MAGridView alloc] initWithFrame:rect];
         _gridView.backgroundColor = [UIColor whiteColor];

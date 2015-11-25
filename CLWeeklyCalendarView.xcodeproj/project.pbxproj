@@ -22,6 +22,9 @@
 		391EEB961A39118400748ADA /* CLWeeklyCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 391EEB901A39118400748ADA /* CLWeeklyCalendarView.m */; };
 		391EEB991A39184C00748ADA /* UIImage+CL.m in Sources */ = {isa = PBXBuildFile; fileRef = 391EEB981A39184C00748ADA /* UIImage+CL.m */; };
 		F9C3E2D51C05665A00447625 /* MAGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C3E2D41C05665A00447625 /* MAGridView.m */; };
+		F9C3E2DB1C05AFFC00447625 /* TapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C3E2DA1C05AFFC00447625 /* TapDetectingView.m */; };
+		F9C3E2DE1C05B25500447625 /* TBScheduleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C3E2DD1C05B25500447625 /* TBScheduleView.m */; };
+		F9C3E2E51C05B5A500447625 /* MAGridView+ScheduleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C3E2E41C05B5A500447625 /* MAGridView+ScheduleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,13 @@
 		F9C3E2D41C05665A00447625 /* MAGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGridView.m; sourceTree = "<group>"; };
 		F9C3E2D71C05691A00447625 /* CommonString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonString.h; sourceTree = "<group>"; };
 		F9C3E2D81C05691A00447625 /* CommonUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUI.h; sourceTree = "<group>"; };
+		F9C3E2D91C05AFFC00447625 /* TapDetectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapDetectingView.h; sourceTree = "<group>"; };
+		F9C3E2DA1C05AFFC00447625 /* TapDetectingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapDetectingView.m; sourceTree = "<group>"; };
+		F9C3E2DC1C05B25500447625 /* TBScheduleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBScheduleView.h; sourceTree = "<group>"; };
+		F9C3E2DD1C05B25500447625 /* TBScheduleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBScheduleView.m; sourceTree = "<group>"; };
+		F9C3E2DF1C05B30600447625 /* CLPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPrefixHeader.pch; sourceTree = "<group>"; };
+		F9C3E2E31C05B5A500447625 /* MAGridView+ScheduleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MAGridView+ScheduleView.h"; sourceTree = "<group>"; };
+		F9C3E2E41C05B5A500447625 /* MAGridView+ScheduleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MAGridView+ScheduleView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +136,7 @@
 			children = (
 				391EEB5E1A39112E00748ADA /* Info.plist */,
 				391EEB5F1A39112E00748ADA /* main.m */,
+				F9C3E2DF1C05B30600447625 /* CLPrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -180,8 +191,14 @@
 		F9C3E2D21C05665A00447625 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F9C3E2D91C05AFFC00447625 /* TapDetectingView.h */,
+				F9C3E2DA1C05AFFC00447625 /* TapDetectingView.m */,
 				F9C3E2D31C05665A00447625 /* MAGridView.h */,
 				F9C3E2D41C05665A00447625 /* MAGridView.m */,
+				F9C3E2DC1C05B25500447625 /* TBScheduleView.h */,
+				F9C3E2DD1C05B25500447625 /* TBScheduleView.m */,
+				F9C3E2E31C05B5A500447625 /* MAGridView+ScheduleView.h */,
+				F9C3E2E41C05B5A500447625 /* MAGridView+ScheduleView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -296,14 +313,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C3E2E51C05B5A500447625 /* MAGridView+ScheduleView.m in Sources */,
 				391EEB661A39112E00748ADA /* ViewController.m in Sources */,
 				391EEB931A39118400748ADA /* NSDate+CL.m in Sources */,
+				F9C3E2DE1C05B25500447625 /* TBScheduleView.m in Sources */,
 				391EEB631A39112E00748ADA /* AppDelegate.m in Sources */,
 				F9C3E2D51C05665A00447625 /* MAGridView.m in Sources */,
 				391EEB961A39118400748ADA /* CLWeeklyCalendarView.m in Sources */,
 				391EEB911A39118400748ADA /* DailyCalendarView.m in Sources */,
 				391EEB601A39112E00748ADA /* main.m in Sources */,
 				391EEB991A39184C00748ADA /* UIImage+CL.m in Sources */,
+				F9C3E2DB1C05AFFC00447625 /* TapDetectingView.m in Sources */,
 				391EEB941A39118400748ADA /* NSDictionary+CL.m in Sources */,
 				391EEB951A39118400748ADA /* UIColor+CL.m in Sources */,
 				391EEB921A39118400748ADA /* DayTitleLabel.m in Sources */,
@@ -428,6 +448,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CLWeeklyCalendarView/CLPrefixHeader.pch";
 				INFOPLIST_FILE = CLWeeklyCalendarView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -439,6 +461,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CLWeeklyCalendarView/CLPrefixHeader.pch";
 				INFOPLIST_FILE = CLWeeklyCalendarView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

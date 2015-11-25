@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CLWeeklyCalendarView/CLWeeklyCalendarViewSourceCode/CLWeeklyCalendarView.m"
-            timestampString = "470128399.400155"
+            filePath = "CLWeeklyCalendarView/CLWeeklyCalendarViewSourceCode/Views/MAGridView+ScheduleView.m"
+            timestampString = "470137189.304247"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "-applyCustomDefaults"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-layoutSubviews"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
